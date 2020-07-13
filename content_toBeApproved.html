@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Movies | Me Trend</title>
+
+  <!-- all the meta tags -->
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta content="Neoflex Video Subscription CMS" name="description" />
+  <meta content="Creativeitem" name="author" />
+
+  <!-- all the css files -->
+  <script src="js/logout.js"></script>
+
+  <link rel="stylesheet" href="./assets/backend/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
+  <link rel="stylesheet" href="./assets/backend/css/font-icons/entypo/css/entypo.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/backend/css/bootstrap.css">
+  <link rel="stylesheet" href="./assets/backend/css/neon-core.css">
+  <link rel="stylesheet" href="./assets/backend/css/neon-theme.css">
+  <link rel="stylesheet" href="./assets/backend/css/neon-forms.css">
+  <link rel="stylesheet" href="./assets/backend/css/custom.css">
+
+  <!--  <link rel="stylesheet" href="./assets/backend/css/neon-rtl.css">-->
+  <script src="./assets/backend/js/jquery-1.11.0.min.js"></script>
+
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <link rel="shortcut icon" href="./assets/backend/images/favicon.png">
+  <link rel="stylesheet" href="./assets/backend/css/font-icons/font-awesome/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet" href="./assets/backend/js/vertical-timeline/css/component.css">
+
+  <link rel="stylesheet" type="text/css" href="./assets/backend/datatable/dataTables/css/dataTables.bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/backend/datatable/buttons/css/buttons.bootstrap.css" />
+
+  <link rel="stylesheet" href="./assets/backend/js/wysihtml5/bootstrap-wysihtml5.css">
+
+  <!--Amcharts-->
+  <script src="./assets/backend/js/amcharts/amcharts.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/pie.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/serial.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/gauge.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/funnel.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/radar.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/exporting/amexport.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/exporting/rgbcolor.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/exporting/canvg.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/exporting/jspdf.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/exporting/filesaver.js" type="text/javascript"></script>
+  <script src="./assets/backend/js/amcharts/exporting/jspdf.plugin.addimage.js" type="text/javascript"></script>
+  <!--Text editor-->
+  <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+
+  <script>
+    function checkDelete() {
+      var chk = confirm("Are You Sure To Delete This !");
+      if (chk) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+  </script>
+
+
+</head>
+
+<body class="page-body">
+  <div class="page-container">
+    <!-- SIDEBAR -->
+    <div class="sidebar-menu">
+      <header class="logo-env">
+        <!-- logo collapse icon -->
+        <div id="hide_brand1" class="sidebar-collapse" style="margin-top: 0px;">
+          <a href="#" class="sidebar-collapse-icon" onclick="hide_brand1()">
+            <i class="entypo-menu"></i>
+          </a>
+        </div>
+        <div id="hide_brand2" style="margin-top: 0px; display: none; float: right;">
+          <a href="#" class="sidebar-collapse-icon" onclick="hide_brand2()">
+            <i class="entypo-menu"></i>
+          </a>
+        </div>
+
+        <!--Start custom responsive navigation-->
+        <script type="text/javascript">
+          window.onresize = doALoadOfStuff;
+
+          function doALoadOfStuff() {
+            if ($(window).width() < 767) {
+              $('#hide_brand2').hide();
+              $('#hide_brand1').hide();
+              $('.custom-query').css("padding-left", "8px");
+            }
+            if ($(window).width() > 767 && $(window).width() < 990) {
+              $('#hide_brand1').show();
+              $('.custom-query').css("padding-left", "85px");
+            }
+            if ($(window).width() > 990) {
+              $('#hide_brand1').show();
+              $('.custom-query').css("padding-left", "300px");
+            }
+          }
+
+          function hide_brand1() {
+            $('#branding_element').toggle();
+            $('#hide_brand2').show();
+            $('#hide_brand1').hide();
+            if ($(window).width() > 767 && $(window).width() < 990) {
+              $('.custom-query').css("padding-left", "300px");
+            }
+            if ($(window).width() > 990) {
+              $('.custom-query').css("padding-left", "85px");
+            }
+          }
+
+          function hide_brand2() {
+            $('#branding_element').toggle();
+            $('#hide_brand2').hide();
+            $('#hide_brand1').show();
+            if ($(window).width() > 767 && $(window).width() < 990) {
+              $('.custom-query').css("padding-left", "85px");
+            }
+            if ($(window).width() > 990) {
+              $('.custom-query').css("padding-left", "300px");
+            }
+          }
+
+        </script>
+        <!--End custom responsive navigation-->
+
+        <!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+        <div class="sidebar-mobile-menu visible-xs">
+          <a href="#" class="with-animation">
+            <i class="entypo-menu"></i>
+          </a>
+        </div>
+      </header>
+      <!--- Sidemenu -->
+      <div style=""></div>
+      <ul id="main-menu" class="">
+        <div style="text-align: -webkit-center;" id="branding_element">
+          <h4 style="color: #a2a3b7;text-align: -webkit-center;margin-bottom: 25px;font-weight: 300;margin-top: 10px;">
+            <a href="#"><img class="nav-icon" src="./assets/global/logo.jpeg" style="max-height:25px;"></a>
+          </h4>
+        </div>
+        <li class="side-nav-item">
+          <a href="./dashboard.html" class="side-nav-link active">
+            <i class="fa fa-tachometer"></i>
+            <span> Dashboard </span>
+          </a>
+        </li>
+
+        <li
+          class="side-nav-item <?php if ($page_name == 'user_list' || $page_name == 'user_edit' || $page_name == 'user_create')echo 'active';?>">
+          <a href="./users.html"
+            class="side-nav-link <?php if ($page_name == 'user_list' || $page_name == 'user_edit' || $page_name == 'user_create')echo 'active';?>">
+            <i class="fa fa-users"></i>
+            <span> Users </span>
+          </a>
+        </li>
+
+        <li
+          class="side-nav-item <?php if ($page_name == 'user_list' || $page_name == 'user_edit' || $page_name == 'user_create')echo 'active';?>">
+          <a href="./content_providers.html"
+            class="side-nav-link <?php if ($page_name == 'user_list' || $page_name == 'user_edit' || $page_name == 'user_create')echo 'active';?>">
+            <i class="fa fa-users"></i>
+            <span> Content Providers </span>
+          </a>
+        </li>
+
+        <li
+          class="side-nav-item <?php if ($page_name == 'movie_list' || $page_name == 'movie_edit' || $page_name == 'movie_create')echo 'active';?>">
+          <a href="./movies.html"
+            class="side-nav-link  <?php if ($page_name == 'movie_list' || $page_name == 'movie_edit' || $page_name == 'movie_create')echo 'active';?>">
+            <i class="fa fa-film"></i>
+            <span> Movies</span>
+          </a>
+        </li>
+
+        <li
+          class="side-nav-item <?php if ($page_name == 'series_list' || $page_name == 'series_create' || $page_name == 'series_edit' || $page_name == 'season_edit')echo 'active';?>">
+          <a href="./tvSeries.html"
+            class="side-nav-link <?php if ($page_name == 'series_list' || $page_name == 'series_create' || $page_name == 'series_edit' || $page_name == 'season_edit')echo 'active';?>">
+            <i class="fa fa-ticket"></i>
+            <span> TV Series </span>
+          </a>
+        </li>
+
+        <li
+          class="side-nav-item <?php if ($page_name == 'genre_list' || $page_name == 'genre_edit' || $page_name == 'genre_create')echo 'active';?>">
+          <a href="./genre.html"
+            class="side-nav-link <?php if ($page_name == 'genre_list' || $page_name == 'genre_edit' || $page_name == 'genre_create')echo 'active';?>">
+            <i class="fa fa-renren"></i>
+            <span> genre </span>
+          </a>
+        </li>
+
+        <li
+          class="side-nav-item <?php if ($page_name == 'director_list' || $page_name == 'director_edit' || $page_name == 'director_create')echo 'active';?>">
+          <a href="./directors.html"
+            class="side-nav-link <?php if ($page_name == 'director_list' || $page_name == 'director_edit' || $page_name == 'director_create')echo 'active';?>">
+            <i class="fa fa-long-arrow-right"></i>
+            <span> Directors </span>
+          </a>
+        </li>
+
+      </ul>
+      </li>
+
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <!-- Sidebar -left -->
+  </div>
+  <!-- Left Sidebar End -->
+
+
+  <!-- PAGE CONTAINER-->
+  <div class="main-content custom-query">
+    <!-- HEADER -->
+
+    <div class="row" style="margin-left:0px; margin-right:0px; margin-top: 20px;">
+      <div class="col-md-12 col-sm-12 clearfix "
+        style="background-color:#ffffff; box-shadow: 0px 10px 30px 0px rgba(82,63,105,0.08); border-radius: 5px;">
+        <!-- <ul class="list-inline links-list pull-left" style="margin-top:9px;">
+          <li>
+              <a href="#" target="_blank">
+                  <i class="entypo-paper-plane"></i> Website
+              </a>
+          </li>
+      </ul> -->
+        <!-- Profile Info -->
+
+        <ul class="user-info pull-right pull-none-xsm" style="margin-top: 9px;">
+          <li class="profile-info dropdown pull-right">
+            <!-- add class "pull-right" if you want to place this from right -->
+
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="./assets/backend/images/admin.png" alt="" class="img-circle" width="44">
+              <p>name</p>
+
+              <div style="margin-top: -15px;
+                                font-size: 10px;
+                                text-align: left;
+                                padding-left: 53px;
+                                color: #707696;">
+                <p>Admin</p>
+              </div>
+            </a>
+
+            <ul class="dropdown-menu">
+              <!-- Reverse Caret -->
+              <li class="caret"></li>
+              <!-- Profile sub-links -->
+              <li>
+                <a href="./login.html" class="dropdown-item notify-item">
+                  <i class="fa fa-lock"></i>
+                  <span>Account</span>
+                </a>
+              </li>
+              <li>
+                <a href="./login.html" class="dropdown-item notify-item">
+                  <i class="fa fa-sign-out"></i>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--  PAGE TITLE -->
+    <!-- <div class="page-title">
+    <i class="icon-custom-right"></i>
+    <h4 class="page-title"><?php echo $page_title;?></h4>
+  </div> -->
+    <h3 style="margin:20px 0px;">
+      <i class="entypo-right-circled"></i>
+      Content To Be Approved
+    </h3>
+    <!-- BEGIN PlACE PAGE CONTENT HERE -->
+
+    <table class="table table-bordered datatable" id="table_export">
+      <thead>
+        <tr>
+          <th>
+            #
+          </th>
+          <th>Title</th>
+          <th>Thumbnail</th>
+          <th>Created By</th>
+          <th>Created At</th>
+          <th>Operation</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <!--    <tr>-->
+        <!--      <td style="vertical-align: middle;">1</td>-->
+        <!--      <td><img src="" style="height: 60px;"/></td>-->
+        <!--      <td style="vertical-align: middle;">MOVIE TITLE</td>-->
+        <!--      <td style="vertical-align: middle;">-->
+        <!--        GENRE-->
+        <!--      </td>-->
+        <!--      <td style="vertical-align: middle;">-->
+        <!--        <a href="./movies_edit.html" class="btn btn-info">-->
+        <!--          edit</a>-->
+        <!--        <a class="btn btn-danger" onclick="return confirm('Want to delete?')">-->
+        <!--          delete</a>-->
+        <!--      </td>-->
+        <!--    </tr>-->
+      </tbody>
+    </table>
+
+    <!-- END PLACE PAGE CONTENT HERE -->
+  </div>
+  <!-- END CONTENT -->
+
+  <!-- all the js files -->
+  <link rel="stylesheet" href="./assets/backend/js/select2/select2-bootstrap.css">
+  <link rel="stylesheet" href="./assets/backend/js/select2/select2.css">
+  <link rel="stylesheet" href="./assets/backend/js/selectboxit/jquery.selectBoxIt.css">
+
+  <!-- Bottom Scripts -->
+  <script src="./assets/backend/js/gsap/main-gsap.js"></script>
+  <script src="./assets/backend/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+  <script src="./assets/backend/js/bootstrap.js"></script>
+  <script src="./assets/backend/js/joinable.js"></script>
+  <script src="./assets/backend/js/resizeable.js"></script>
+  <script src="./assets/backend/js/neon-api.js"></script>
+  <script src="./assets/backend/js/toastr.js"></script>
+  <script src="./assets/backend/js/jquery.validate.min.js"></script>
+  <script src="./assets/backend/js/fullcalendar/fullcalendar.min.js"></script>
+  <script src="./assets/backend/js/bootstrap-datepicker.js"></script>
+  <script src="./assets/backend/js/bootstrap-timepicker.min.js"></script>
+  <script src="./assets/backend/js/fileinput.js"></script>
+
+  <script type="text/javascript" src="./assets/backend/datatable/dataTables/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="./assets/backend/datatable/dataTables/js/dataTables.bootstrap.js"></script>
+  <script type="text/javascript" src="./assets/backend/datatable/buttons/js/dataTables.buttons.js"></script>
+  <script type="text/javascript" src="./assets/backend/datatable/buttons/js/buttons.bootstrap.js"></script>
+
+  <script src="./assets/backend/js/select2/select2.min.js"></script>
+  <script src="./assets/backend/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+
+
+  <script src="./assets/backend/js/neon-calendar.js"></script>
+  <script src="./assets/backend/js/neon-chat.js"></script>
+  <script src="./assets/backend/js/neon-custom.js"></script>
+  <script src="./assets/backend/js/neon-demo.js"></script>
+
+  <script src="./assets/backend/js/wysihtml5/wysihtml5-0.4.0pre.min.js"></script>
+  <script src="./assets/backend/js/wysihtml5/bootstrap-wysihtml5.js"></script>
+
+
+  <!---  DATA TABLE EXPORT CONFIGURATIONS -->
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      var datatable = $("#table_export").dataTable();
+    });
+
+    window.onload = toBeApproved_Content();
+
+    async function toBeApproved_Content() {
+      let user = JSON.parse(window.localStorage.getItem('USER'));
+
+      let response = await fetch('http://13.234.19.22:8000/api/content/toBeApproved', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          'Authorization': 'bearer ' + user.token.value
+        }
+      });
+
+      let result = await response.json();
+      let allContent = result.data.content;
+      let count = 1;
+      let html = '';
+
+      allContent.forEach((content) => {
+        html +=
+          "<tr>" +
+          "<td>" + content.id + "</td>" +
+          "<td style='text-transform: uppercase;'>" + content.title + "</td>" +
+          "<td style='text-transform: uppercase;'><img width='100px' src='http://13.234.19.22:8000/" + content
+          .thumbnailURL + "'/></td>" +
+          "<td style='text-transform: uppercase;'>" + content.cp_email + "</td>" +
+          "<td style='text-transform: uppercase;'>" + content.createdAt.split("T")[0] + "</td>" +
+          `<td><a href='./content_edit.html?content_id=${content.id}' class='btn btn-info editContent'>Edit</a> <a href='#' id='${content.id}' class='btn btn-black deleteContent'>Delete</a></td>` +
+          `<td><a href='./content_approve.html?content_id=${content.id}' class='btn btn-success'>Approve</a></td>` +
+          "</tr>";
+      });
+
+      $('#tbody').html(html);
+
+      // DELETE CONTENT
+      $("a.deleteContent").on("click", async function (e) {
+        let user = JSON.parse(window.localStorage.getItem('USER'));
+        const content_id = $(this).attr("id");
+
+        const response = await fetch("http://13.234.19.22:8000/api/content/toBeApproved/delete", {
+          method: "delete",
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'authorization': 'bearer ' + user.token.value
+          },
+          body: JSON.stringify({
+            content_id: content_id
+          })
+        });
+
+        const result = await response.json();
+
+        if (result.status_code == 200) {
+          alert(result.message);
+          window.location.reload();
+        } else {
+          alert("Some error occured try again");
+          console.log("error: ", result);
+        }
+      });
+    }
+    
+  </script>
+</body>
+
+</html>

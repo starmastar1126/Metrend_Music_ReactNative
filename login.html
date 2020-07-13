@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="HTML5 Template" />
+  <meta name="description" content="Creativeitem" />
+  <meta name="author" content="Creativeitem" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link name="favicon" type="image/x-icon" href="./assets/backend/images/favicon.png" rel="shortcut icon" />
+  <title></title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/backend/images/favicon.png" />
+  <!-- font -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,500i,600,700,800,900|Poppins:200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900">
+  <link rel="stylesheet" type="text/css" href="./assets/backend/login/plugins-css.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/backend/login/typography.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/backend/login/style.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/backend/login/responsive.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <section class="gray-bg height-100vh d-flex align-items-center page-section-ptb ">
+      <div class="container">
+        <div class="row no-gutters justify-content-center">
+          <div class="col-lg-4 col-md-6 login-fancy-bg bg-overlay-black-0"
+            style="background-image: url('./assets/backend/login/login_bg.jpg');">
+            <div class="login-fancy pos-r d-flex">
+              <div class="text-center w-100 align-self-center">
+                <img src="./assets/global/logo.jpeg" width="50%" />
+                <h2 class="text-white mb-20">Movie Subscription Portal</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 white-bg">
+            <div class="login-fancy pb-40 clearfix" id="login_area">
+              <h3 class="mb-30">Login</h3>
+              <!-- <form class="loginForm"> -->
+              <div class="section-field mb-20">
+                <label class="mb-10" for="email">Email* </label>
+                <input id="email" class="web form-control" type="email" placeholder="email" name="email" required>
+              </div>
+              <div class="section-field mb-20">
+                <label class="mb-10" for="Password">Password* </label>
+                <input id="password" class="Password form-control" type="password" placeholder="password"
+                  name="password" required>
+              </div>
+
+              <button class="btn btn-success" onclick="login(this)">Login</button> </a>
+              </form>
+
+              <!-- <div class="section-field">
+              <div class="remember-checkbox mb-30">
+                <a href="#" class="float-right" id = "forgot_password_button" onclick="toggleView(this)" style="color: black;">Forgot Password ?</a>
+
+
+              </div>
+            </div> -->
+            </div>
+
+            <!-- <div class="login-fancy pb-40 clearfix" id = "forgot_password_area" style="display: none;">
+            <h3 class="mb-30">Forgot Password</h3>
+            <form class="" action="<?php echo site_url('home/forget'); ?>" method="post">
+              <div class="section-field mb-20">
+                <label class="mb-10" for="forgot_password_email">Email* </label>
+                <input id="forgot_password_email" class="web form-control" type="email" placeholder="Email" name="email" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Mail</button>
+            </form>
+
+            <div class="section-field">
+              <div class="remember-checkbox mb-30">
+                <a href="#" class="float-right" id = "login_button" onclick="toggleView(this)" style="color: black;">Back To Login ?</a>
+              </div>
+            </div>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- jquery -->
+  <script src="./assets/backend/login/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      if (window.localStorage.getItem('USER')) {
+        window.location = "dashboard.html";
+      }
+    })
+
+    function toggleView(elem) {
+      if (elem.id === 'forgot_password_button') {
+        $('#login_area').hide();
+        $('#forgot_password_area').show();
+      } else if (elem.id === 'login_button') {
+        $('#login_area').show();
+        $('#forgot_password_area').hide();
+      }
+    }
+
+    async function login(e) {
+
+      let user = {
+        email: $('#email').val(),
+        password: $('#password').val(),
+        is_mobile: true
+      };
+
+      let response = await fetch('http://13.234.19.22:8000/api/auth/validateUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(user)
+      });
+
+      let result = await response.json();
+
+      if (result.status_code === 200) {
+        const resUser = result.user;
+
+        if (resUser.user_type == 'admin' || (resUser.user_type == 'cp' && resUser.e_sing != 0)) {
+          response = await fetch('http://13.234.19.22:8000/api/auth/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user)
+          });
+
+          result = await response.json();
+
+          if (result.status_code === 200) {
+            alert(result.message);
+            window.localStorage.setItem('USER', JSON.stringify(result.data));
+            window.location = "dashboard.html";
+          } else {
+            alert(result.error);
+          }
+        } else {
+          window.localStorage.setItem('VALIDATE-USER', JSON.stringify(resUser));
+          window.location = 'e_sing.html';
+        }
+      } else {
+        alert(result.error);
+      }
+    }
+
+  </script>
+</body>
+
+</html>

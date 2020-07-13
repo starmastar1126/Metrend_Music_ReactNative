@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ebc9308-dd98-4f55-8585-98263cc1b354" name="Default Changelist" comment="" />
+    <list default="true" id="733ede32-51b3-4997-80aa-95d363ce389f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,35 +14,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PackageJsonUpdateNotifier">
-    <dismissed value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="ProjectId" id="1UbzBDsEy3YvYvWJ1LcHIXnguo0" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
+  <component name="ProjectId" id="1THH1ggAJcfsxxpldlbHmfa7dyH" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
   </component>
@@ -47,17 +42,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3ebc9308-dd98-4f55-8585-98263cc1b354" name="Default Changelist" comment="" />
-      <created>1575639944802</created>
+      <changelist id="733ede32-51b3-4997-80aa-95d363ce389f" name="Default Changelist" comment="" />
+      <created>1573109886835</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1575639944802</updated>
-      <workItem from="1575639945998" duration="773000" />
-      <workItem from="1575653917430" duration="13000" />
-      <workItem from="1578320502722" duration="175000" />
-      <workItem from="1579099591496" duration="1287000" />
-      <workItem from="1579191749495" duration="2030000" />
-      <workItem from="1582731419303" duration="793000" />
+      <updated>1573109886835</updated>
+      <workItem from="1573109891106" duration="4120000" />
+      <workItem from="1573114869240" duration="5832000" />
+      <workItem from="1573304317250" duration="1064000" />
+      <workItem from="1573384607665" duration="12000" />
+      <workItem from="1573473781063" duration="1064000" />
     </task>
     <servers />
   </component>
