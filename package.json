@@ -1,59 +1,26 @@
 {
-  "name": "MusicApp",
-  "version": "0.0.1",
-  "private": true,
+  "name": "node_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "start": "node server.js"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.7.1",
-    "@react-native-community/blur": "^3.4.1",
-    "@react-native-community/google-signin": "^3.0.4",
-    "@react-native-community/masked-view": "^0.1.6",
-    "@react-native-community/slider": "^2.0.8",
-    "@react-navigation/material-top-tabs": "^5.0.0",
-    "fluidbottomnavigation-rn": "^0.1.1",
-    "i18n-js": "^3.5.1",
-    "react": "16.9.0",
-    "react-native": "0.61.5",
-    "react-native-atoz-listview": "^0.0.7",
-    "react-native-gesture-handler": "^1.5.6",
-    "react-native-grid-view": "^0.4.1",
-    "react-native-linear-gradient": "^2.5.6",
-    "react-native-localization": "^2.1.6",
-    "react-native-material-bottom-navigation": "^1.0.5",
-    "react-native-paper": "^3.6.0",
-    "react-native-reanimated": "^1.7.0",
-    "react-native-restart": "^0.0.13",
-    "react-native-safe-area-context": "^0.6.4",
-    "react-native-scaling-drawer": "^1.0.1",
-    "react-native-screens": "^2.0.0-beta.2",
-    "react-native-search-box": "^0.0.19",
-    "react-native-searchbar": "1.16.0",
-    "react-native-slider": "^0.11.0",
-    "react-native-vector-icons": "^6.6.0",
-    "react-native-video": "^5.0.2",
-    "react-navigation": "^4.1.1",
-    "react-navigation-material-bottom-tabs": "^2.1.5",
-    "react-navigation-stack": "^2.1.1",
-    "react-navigation-tabs": "^2.7.0",
-    "step-scale": "^0.2.2"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.14.0",
+    "express-validator": "^6.4.0",
+    "image-hash": "^3.3.9",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.17.1"
   },
-  "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/runtime": "^7.8.4",
-    "@react-native-community/eslint-config": "^0.0.7",
-    "babel-jest": "^25.1.0",
-    "eslint": "^6.8.0",
-    "jest": "^25.1.0",
-    "metro-react-native-babel-preset": "^0.58.0",
-    "react-test-renderer": "16.9.0"
+  "author": {
+    "name": "Danyal Ahmad",
+    "email": "danyal20098@gmail.com"
   },
-  "jest": {
-    "preset": "react-native"
-  }
+  "license": "ISC"
 }
